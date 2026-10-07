@@ -1,0 +1,31 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '16.0'
+
+require_relative '../OTTVPN/Podfile/pod_helper'
+
+target 'OTTVPN' do
+  use_frameworks!
+
+  # Pods for OTTVPN
+  pod 'Alamofire', '~> 5.10'
+  pod 'KeychainAccess', '~> 4.3'
+  pod 'SwiftSoup', '~> 3.7'
+
+  # WireGuard for iOS integration
+  pod 'WireGuardCocoa', :git => 'https://github.com/WireGuard/wireguard-apple.git', :tag => '1.0.16'
+
+  target 'OTTVPNTests' do
+    inherit! :complete
+    pod 'SnapshotTesting', '~> 8.1'
+  end
+
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
+      config.build_settings['SWIFT_VERSION'] = '5.9'
+    end
+  end
+end

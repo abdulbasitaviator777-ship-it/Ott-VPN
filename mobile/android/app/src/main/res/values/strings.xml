@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OTT VPN</string>
+    <string name="app_name_short">OTT</string>
+    <string name="vpn_service_name">OTT VPN</string>
+    <string name="vpn_api_base">https://api.ottvpn.in</string>
+    <string name="vpn_api_base_staging">https://staging.api.ottvpn.in</string>
+    <string name="notification_channel_vpn">VPN Connection</string>
+    <string name="notification_vpn_connected">OTT VPN is connected</string>
+    <string name="notification_vpn_disconnected">OTT VPN is disconnected</string>
+</resources>

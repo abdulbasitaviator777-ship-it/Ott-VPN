@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ottvpn
+      POSTGRES_USER: ottvpn
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/api.Dockerfile
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./infrastructure/docker:/app/infrastructure:ro
+
+  wireguard-mumbai:
+    image: linuxserver/wireguard:latest
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.conf.all.src_validity_marker=0
+    volumes:
+      - ./vpn-server/wireguard/mumbai:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - SERVERURL=${WG_ENDPOINT_MUMBAI:-mumbai.vpn.example}
+      - SERVERPORT=51820
+      - PEERS=0
+      - PEERDNS=10.66.1.1,fd86::1
+      - INTERNAL_SUBNET=10.66.1.0
+      - ROUTE_TABLE=none
+    network_mode: "host"
+    restart: unless-stopped
+
+volumes:
+  pg_data:
+  redis_data:

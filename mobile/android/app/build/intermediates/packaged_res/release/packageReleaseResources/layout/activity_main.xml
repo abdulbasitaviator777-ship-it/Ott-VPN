@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INDIA VPN"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="India Flag"
+        android:src="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOT CONNECTED"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/connect_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="CONNECT"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🇮🇳 India"
+        android:layout_marginBottom="8dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/city_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mumbai"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/latency_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latency: -- ms"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/load_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Server Load: -- %"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/dns_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DNS Leak: Protected"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/ipv6_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IPv6: Protected"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/server_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Servers"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="start" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/server_list"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>

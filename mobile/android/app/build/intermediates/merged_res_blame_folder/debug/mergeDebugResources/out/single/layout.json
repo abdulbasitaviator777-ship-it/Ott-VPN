@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.ottvpn.app-mergeDebugResources-38:/layout/activity_main.xml",
+        "source": "com.ottvpn.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.ottvpn.app-mergeDebugResources-38:/layout/item_server.xml",
+        "source": "com.ottvpn.app-main-41:/layout/item_server.xml"
+    },
+    {
+        "merged": "com.ottvpn.app-mergeDebugResources-38:/layout/dialog_login.xml",
+        "source": "com.ottvpn.app-main-41:/layout/dialog_login.xml"
+    }
+]

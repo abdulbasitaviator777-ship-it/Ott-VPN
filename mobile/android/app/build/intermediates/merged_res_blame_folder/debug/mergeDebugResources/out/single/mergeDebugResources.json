@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.ottvpn.app-debug-39:/layout_activity_main.xml.flat",
+        "source": "com.ottvpn.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.ottvpn.app-debug-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.ottvpn.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.ottvpn.app-debug-39:/layout_dialog_login.xml.flat",
+        "source": "com.ottvpn.app-main-41:/layout/dialog_login.xml"
+    },
+    {
+        "merged": "com.ottvpn.app-debug-39:/drawable_ic_vpn_foreground.xml.flat",
+        "source": "com.ottvpn.app-main-41:/drawable/ic_vpn_foreground.xml"
+    },
+    {
+        "merged": "com.ottvpn.app-debug-39:/xml_network_security_config.xml.flat",
+        "source": "com.ottvpn.app-main-41:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.ottvpn.app-debug-39:/layout_item_server.xml.flat",
+        "source": "com.ottvpn.app-main-41:/layout/item_server.xml"
+    }
+]
